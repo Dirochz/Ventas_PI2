@@ -1,11 +1,11 @@
-CREATE database DBVENTA 
-GO
+Create DataBase DBVENTA 
+Go
 
-use DBVENTA
-GO
+Use DBVENTA
+Go
 
-CREATE TABLE Menu(
-	idMenu int primary Key identity(1,1),
+Create Table Menu(
+	idMenu int primary key identity(1,1),
 	descripcion varchar(30),
 	idMenuPadre int references Menu(idMenu),
 	icono varchar(30),
@@ -13,86 +13,86 @@ CREATE TABLE Menu(
 	paginaAccion varchar(30),
 	esActivo bit,
 	fechaRegistro datetime default getdate())
-GO
+Go
 
-CREATE TABLE Rol(
+Create Table Rol(
 	idRol int primary key identity(1,1),
 	descripcion varchar(30),
 	esActivo bit,
 	fechaRegistro datetime default getdate())
-GO
-
-CREATE TABLE RolMenu(
+Go
+ 
+Create Table RolMenu(
 	idRolMenu int primary key identity(1,1),
 	idRol int references Rol(idRol),
 	idMenu int references Menu(idMenu),
 	esActivo bit,
 	fechaRegistro datetime default getdate())
-GO
+Go
 
-CREATE TABLE Usuario(
+Create Table Usuario(
 	idUsuario int primary key identity(1,1),
 	nombre varchar(50),
 	correo varchar(50),
 	telefono varchar(50),
 	idRol int references Rol(idRol),
 	urlFoto varchar(500),
-	nommbreFoto varchar(100),
+	nombreFoto varchar(100),
 	clave varchar(100),
 	esActivo bit,
 	fechaRegistro datetime default getdate())
-GO
+Go
 
-CREATE TABLE Categoria(
+Create Table Categoria(
 	idCategoria int primary key identity(1,1),
 	descripcion varchar(50),
 	esActivo bit,
 	fechaRegistro datetime default getdate())
-GO
+Go
 
-CREATE TABLE Producto(
+Create Table Producto(
 	idProducto int primary key identity(1,1),
 	codigoBarra varchar(50),
 	marca varchar(50),
 	descripcion varchar(100),
 	idCategoria int references Categoria(idCategoria),
 	stock int,
-	urlImage varchar(500),
+	urlImagen varchar(500),
 	nombreImagen varchar(100),
 	precio decimal(10,2),
 	esActivo bit,
 	fechaRegistro datetime default getdate())
-GO
+Go
 
-CREATE TABLE NumeroCorrelativo(
+Create Table NumeroCorrelativo(
 	idNumeroCorrelativo int primary key identity(1,1),
 	ultimoNumero int,
 	cantidadDigitos int,
 	gestion varchar(100),
 	fechaActualizacion datetime)
-GO
+Go
 
-CREATE TABLE TipoDocumentoVenta(
+Create Table TipoDocumentoVenta(
 	idTipoDocumentoVenta int primary key identity(1,1),
 	descripcion varchar(50),
 	esActivo bit,
 	fechaRegistro datetime default getdate())
-GO
+Go
 
-CREATE TABLE Venta(
+Create Table Venta(
 	idVenta int primary key identity(1,1),
 	numeroVenta varchar(6),
 	idTipoDocumentoVenta int references TipoDocumentoVenta(idTipoDocumentoVenta),
 	idUsuario int references Usuario(idUsuario),
 	documentoCliente varchar(10),
-	nombreCleinte varchar(20),
-	subTotal decimal (10,2),
+	nombreCliente varchar(20),
+	subTotal decimal(10,2),
 	impuestoTotal decimal(10,2),
-	Total decimal (10, 2),
-	fechaRegisto datetime default getdate())
-GO
+	Total decimal(10,2),
+	fechaRegistro datetime default getdate())
+Go
 
-CREATE TABLE DetalleVenta(
+Create Table DetalleVenta(
 	idDetalleVenta int primary key identity(1,1),
 	idVenta int references Venta(idVenta),
 	idProducto int,
@@ -102,9 +102,9 @@ CREATE TABLE DetalleVenta(
 	cantidad int,
 	precio decimal(10,2),
 	total decimal(10,2))
-GO
+Go
 
-CREATE TABLE Negocio(
+Create Table Negocio(
 	idNegocio int primary key,
 	urlLogo varchar(500),
 	nombreLogo varchar(100),
@@ -113,12 +113,12 @@ CREATE TABLE Negocio(
 	correo varchar(50),
 	direccion varchar(50),
 	telefono varchar(50),
-	procentajeImpuesto decimal(10,2),
+	porcentajeImpuesto decimal(10,2),
 	simboloMoneda varchar(5))
-GO
+Go
 
-CREATE TABLE Configuracion(
+Create Table Configuracion(
 	recurso varchar(50),
 	propiedad varchar(50),
 	valor varchar(60))
-GO
+Go
