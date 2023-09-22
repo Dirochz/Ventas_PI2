@@ -2,6 +2,7 @@ Use DBVENTA
 Go
 
 --________________________________ INSERTAR ROLES ________________________________
+--Evitar tocar porque si modifican estas opciones o las mueven tendran que modificar los ultimos 3 Inserts
 Insert Into rol(descripcion,esActivo) Values
 	('Administrador',1),
 	('Empleado',1),
@@ -9,6 +10,7 @@ Insert Into rol(descripcion,esActivo) Values
 Go
 
 --________________________________ INSERTAR USUARIO ________________________________
+--Evitar modificar la clave al menos que tengan la contraseña incriptada, no tocar urlfoto y nombreFoto
 --Correo: equipopi2@gmail.com  clave : 123
 Insert Into Usuario(nombre,correo,telefono,idRol,urlFoto,nombreFoto,clave,esActivo) Values
 	('Dinamita Project','equipopi2@gmail.com','909090',1,'','','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3',1)
@@ -23,7 +25,7 @@ Go
 --		5. Dar clic en "Contraseña de aplicaciones"
 --		6. Seleccionar "aplicacion" - > "Otra"
 --		7. Copiar Codigo para usarlo aqui junto al correo que hiciste todos estos pasos
-
+--Solo modificar las '' que estan vacias
 Insert Into Configuracion(recurso,propiedad,valor) Values
 	('Servicio_Correo','correo',''),
 	('Servicio_Correo','clave',''),
@@ -63,7 +65,7 @@ Go
 --	19. Ir Ajustes damos clic en "Configuracion del proyecto"
 --	20. Copiar el contenido de "Clave de API WEB"
 --	21. Agregar todo lo copiado en el siguiente Insert
-
+-- Solo modificar las '' que estan vacias
 Insert Into Configuracion(recurso,propiedad,valor) Values
 	('FireBase_Storage','email',''),
 	('FireBase_Storage','clave',''),
@@ -76,14 +78,13 @@ Go
 
 --________________________________ INSERTAR NEGOCIO ________________________________
 -- Es estructura para el negocio, se modifica en la pestaña de negocio
-
+-- NO TOCAR SE CONFIGURA EN LA PAGINA
 Insert Into Negocio(idNegocio,urlLogo,nombreLogo,numeroDocumento,nombre,correo,direccion,telefono, porcentajeImpuesto,simboloMoneda)
 	Values (1,'','','','','','','',0,'')
 Go
 
 
 --________________________________ INSERTAR CATEGORIAS ________________________________
-
 Insert Into Categoria(descripcion,esActivo) Values
 	('Computadoras',1),
 	('Laptops',1),
@@ -96,7 +97,6 @@ Insert Into Categoria(descripcion,esActivo) Values
 Go
 
 --________________________________ INSERTAR TIPO DOCUMENTO VENTA ________________________________
-
 Insert Into TipoDocumentoVenta(descripcion,esActivo) Values
 	('Boleta',1),
 	('Factura',1)
@@ -104,18 +104,19 @@ Go
 
 --________________________________ INSERTAR NUMERO CORRELATIVO ________________________________
 --000001
-
+-- NO TOCAR es el que pone los ceros en el numero de documentacion
 Insert Into NumeroCorrelativo(ultimoNumero,cantidadDigitos,gestion,fechaActualizacion) Values
 	(0,6,'venta',getdate())
 Go
 
 --________________________________ INSERTAR MENUS ________________________________
 --*menu padre
-
+-- NO TOCAR
 Insert Into Menu(descripcion,icono,controlador,paginaAccion,esActivo) Values
 	('DashBoard','fas fa-fw fa-tachometer-alt','DashBoard','Index',1)
 Go
 
+-- NO TOCAR: son las ventanas de las interfaz
 Insert Into Menu(descripcion,icono,esActivo) Values
 	('Administración','fas fa-fw fa-cog',1),
 	('Inventario','fas fa-fw fa-clipboard-list',1),
@@ -124,24 +125,28 @@ Insert Into Menu(descripcion,icono,esActivo) Values
 Go
 
 --*menu hijos Administracion
+-- NO TOCAR: Son las opciones de Administracion
 Insert Into Menu(descripcion,idMenuPadre, controlador,paginaAccion,esActivo) Values
 	('Usuarios',2,'Usuario','Index',1),
 	('Negocio',2,'Negocio','Index',1)
 Go
 
 --*menu hijos - Inventario
+-- NO TOCAR: Son las opciones de Inventario
 Insert Into Menu(descripcion,idMenuPadre, controlador,paginaAccion,esActivo) Values
 	('Categorias',3,'Categoria','Index',1),
 	('Productos',3,'Producto','Index',1)
 Go
 
 --*menu hijos - Ventas
+-- NO TOCAR: Son las Opciones de Ventas
 Insert Into Menu(descripcion,idMenuPadre, controlador,paginaAccion,esActivo) Values
 	('Nueva Venta',4,'Venta','NuevaVenta',1),
 	('Historial Venta',4,'Venta','HistorialVenta',1)
 Go
 
 --*menu hijos - Reportes
+--No Tocar: Son las opciones de Reportes
 Insert Into Menu(descripcion,idMenuPadre, controlador,paginaAccion,esActivo) Values
 	('Reporte de Ventas',5,'Reporte','Index',1)
 Go
@@ -151,7 +156,8 @@ Go
 
 --________________________________ INSERTAR ROL MENU ________________________________
 --*administrador
-
+--NO TOCAR LOS SIGUIENTES 3 INSERTS
+--Son los que reparten que menu tendran los 3 roles
 Insert Into RolMenu(idRol,idMenu,esActivo) Values
 	(1,1,1),
 	(1,6,1),
