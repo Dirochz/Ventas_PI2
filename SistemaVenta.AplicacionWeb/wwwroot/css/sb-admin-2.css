@@ -1,15 +1,3 @@
-/*!
- * Start Bootstrap - SB Admin 2 v4.1.3 (https://startbootstrap.com/theme/sb-admin-2)
- * Copyright 2013-2021 Start Bootstrap
- * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-sb-admin-2/blob/master/LICENSE)
- */
-
-/*!
- * Bootstrap v4.6.0 (https://getbootstrap.com/)
- * Copyright 2011-2021 The Bootstrap Authors
- * Copyright 2011-2021 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
  :root {
   --blue: #4e73df;
   --indigo: #6610f2;
@@ -2357,19 +2345,19 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #4e73df;
+  background-color: #0F111E;
   border-color: #4e73df;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #2e59d9;
+  background-color: #191d33;
   border-color: #2653d4;
 }
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #2e59d9;
+  background-color: black;
   border-color: #2653d4;
   box-shadow: 0 0 0 0.2rem rgba(105, 136, 228, 0.5);
 }
@@ -2383,7 +2371,7 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #2653d4;
+  background-color: black;
   border-color: #244ec9;
 }
 
@@ -6534,6 +6522,10 @@ button.bg-dark:focus {
   background-color: #fff !important;
 }
 
+.bg-blue {
+    background-color: #b1b9eb !important;
+}
+
 .bg-transparent {
   background-color: transparent !important;
 }
@@ -9939,15 +9931,9 @@ a:focus {
   animation-timing-function: opacity cubic-bezier(0, 1, 0.4, 1);
 }
 
-/* .bg-gradient-primary {
-  background-color: #4e73df;
-  background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
-  background-size: cover;
-} */
-
 .bg-gradient-primary {
-  background-color: #004A93;
-  background-size: cover;
+    background-color: #0f111e;
+    background-size: cover;
 }
 
 .bg-second-primary{
@@ -9968,15 +9954,9 @@ a:focus {
 }
 
 .bg-gradient-info {
-  background-color: #004A93;
-  background-size: cover;
+    background-color: #0f111e;
+    background-size: cover;
 }
-
-/* .bg-gradient-info {
-  background-color: #36b9cc;
-  background-image: linear-gradient(180deg, #36b9cc 10%, #258391 100%);
-  background-size: cover;
-} */
 
 .bg-gradient-warning {
   background-color: #f6c23e;
@@ -10443,7 +10423,7 @@ a:focus {
   padding: 0.5rem 1rem;
   margin: 0 0.5rem;
   display: block;
-  color: #3a3b45;
+  color: black;
   text-decoration: none;
   border-radius: 0.35rem;
   white-space: nowrap;
@@ -10745,39 +10725,39 @@ a:focus {
 }
 
 .sidebar-dark .nav-item .nav-link {
-  color: rgba(255, 255, 255, 0.8);
+  color: white;
 }
 
 .sidebar-dark .nav-item .nav-link i {
-  color: rgba(255, 255, 255, 0.3);
+  color: white;
 }
 
 .sidebar-dark .nav-item .nav-link:active, .sidebar-dark .nav-item .nav-link:focus, .sidebar-dark .nav-item .nav-link:hover {
-  color: #fff;
+  color: #b1b9eb;
 }
 
 .sidebar-dark .nav-item .nav-link:active i, .sidebar-dark .nav-item .nav-link:focus i, .sidebar-dark .nav-item .nav-link:hover i {
-  color: #fff;
+  color: #b1b9eb;
 }
 
 .sidebar-dark .nav-item .nav-link[data-toggle="collapse"]::after {
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
 }
 
 .sidebar-dark .nav-item.active .nav-link {
-  color: #fff;
+  color: #b1b9eb;
 }
 
 .sidebar-dark .nav-item.active .nav-link i {
-  color: #fff;
+  color: #b1b9eb;
 }
 
 .sidebar-dark #sidebarToggle {
-  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
 }
 
 .sidebar-dark #sidebarToggle::after {
-  color: rgba(255, 255, 255, 0.5);
+  color: black;
 }
 
 .sidebar-dark #sidebarToggle:hover {
@@ -10785,7 +10765,7 @@ a:focus {
 }
 
 .sidebar-dark.toggled #sidebarToggle::after {
-  color: rgba(255, 255, 255, 0.5);
+  color: black;
 }
 
 .btn-circle {
@@ -10916,10 +10896,9 @@ a:focus {
 }
 
 .bg-login-image {
-  background: url("https://images.unsplash.com/photo-1541574823565-f1d660886187?w=600");
-  /* background: url("https://source.unsplash.com/K4mSJ7kc0As/600x800"); */
-  background-position: center;
-  background-size: cover;
+    background: url("https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FLOGI%5B271%5D.png?alt=media&token=8c4ae2f9-d42f-43d1-9a4c-923052b85d46");
+    background-position: left;
+    background-size: 114%;
 }
 
 .bg-register-image {
