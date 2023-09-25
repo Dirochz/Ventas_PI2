@@ -5,6 +5,7 @@
     string menucollapse = "menucollapse";
     int correlativo = 1;
 }
+
  @foreach (var menu in Model){
     if (menu.SubMenus.Count == 0)
     {
@@ -32,7 +33,6 @@
                     }
                  </div>
              </div>
-
         </li>
         correlativo = correlativo + 1;
     }

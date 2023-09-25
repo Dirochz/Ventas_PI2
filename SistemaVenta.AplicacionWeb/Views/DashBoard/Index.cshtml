@@ -4,133 +4,118 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 <!-- Titulo -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+    <h1 class="h3 mb-0 text-indigo">Dashboard</h1>
 </div>
 
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Total de ventas -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                               Total de Ventas</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalVenta">30</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-shopping-basket fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Total de Ingresos -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Total de Ingresos</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalIngresos">$215,000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Total de Productos -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Total de Productos</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalProductos">50</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    
-
-                        <!-- Total de Categorias -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Total de Categorias</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalCategorias">18</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-tags fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<div class="row">
+    <!-- Total de ventas -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-indigo text-uppercase mb-1"> Total de Ventas</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalVenta">30</div>
                     </div>
-
-                    <!-- Content Row -->
-
-                    <div class="row">
-
-                        <!-- Area Chart - Ventas de los ultimos 7 días -->
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 bg-second-primary">
-                                    <h6 class="m-0 font-weight-bold text-white">Ventas de los ultimos 7 días</h6>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area" style="height: 350px !important;">
-                                        <canvas id="chartVentas"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pie Chart - Productos más vendidos-->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 bg-second-primary">
-                                    <h6 class="m-0 font-weight-bold text-white">Productos más vendidos</h6>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie" style="height: 350px !important ;">
-                                        <canvas id="chartProductos"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-auto">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACOUlEQVR4nO2XzUocQRDHfyG5ePOUXUU8eIgv4CU5BvMAirr58Owl5hByyAOYlYCPYB5CfAN9AL/wFjD3QIS4gklW7TBQA0tTPdMzPTM7Cf2HhmG6urp/XVU9PRAVFRX1v6gLbAMnwLW05LkPdGqc1xRsmXolC3cNHgAv2w7yGrj3cHBfE4ypAqQru+3rZFBDmpkqQLYVwz/Ae2DD4egT9Woa+FYU5FSBWJK+KYej5ACoS5PAWZmI2Gk1BC4l5VwgVwEL7UnTNAEclk0tV31M1wDSk40aKjCPgD1lLu2dV2r5gBwHQIxGPoV5AHxR5jmQKHmB9B2L3cgo9q1ACBumr/SdSr3gC9IpePwmafW4Aoi03SnvLiQjKAKCfOR8P4i9QIi0RlxzfAeeWH68QVKYQU4kqoBIT62hY44FKlBHPnZHAjWQ5y0rnV4AayUhXDa/gUUa1DJwA9wC60r/qgKR2L5RbFfE9q5gtIP1zirOvF3WbGz1gLc0qI+O2kkjUyQSY9FDYDfnNBuWiISPTJHTKksTjivCdc4RWgVEZSCTckWwnf0Ano4UqqkxnUwoSFfuU7aj5B9hfsTOhnFBZC3IlOzL1RzwVXFyDswo9ilMViQaB1mQK4Lt4HDkAlf0H6NxkOfAT2XwvhR9iBoDmQV+KQN35fgNVaMR2bQGfZYfnmDH46iRHbmqf2hwQaYOkCQCzzL6/xmQPEUQxhAR06L0MRGEdu26iRGhXbtuYkRo166bGJGoqKgo2qa/EowW3o5TbU8AAAAASUVORK5CYII=">
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+     <!-- Total de Ingresos -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-indigo text-uppercase mb-1">Total de Ingresos</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalIngresos">$215,000</div>
+                    </div>
+                    <div class="col-auto">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEBElEQVR4nO2ZW4hVZRTHf6aVg4ZCauGFiDAJsxQdRRIt7CoOiij5EmQPlbdMGXFGMUWUmMkHGWSgeuhhEJUQwTEUR9EsoR58EWwKtJC8G84w48zgOHZkwX/Dx+acOXvvb5+LMH9YD+d8e6/1/fde12/DAPrFS8AR4DbwO1DFY0riJpAJSR0wiMcELwMXs5AI5CCwAtipN3YVuA9sKdWGpwONQAtwHrgM3AH+74dELjkOVJSKyOIEG84m3wNPSeeQUpFpzLPJf+U62db6gPXSY3HzOTCsVEQGA/uzbNI2/5azSYuJB856O/C+1p8GmkSkpLCNfgHc0CZPAmO1Nsp5ykuBe8DPSgiG0cAvwOlSZ7PBeqKBf4901uYDbcpgY7LcOwX4W8mhkjLAR8ByYKjzlL9WSg1c6ZJczcg+B9QAXVqzYlkWeBK4oOC9nSBrbaSM8KFH+p0pHU8ACxT45nI9QIfe2FfA88V6K20JiQSJ4dc8190HPigGmZYEJNqdBFEL/AdcAaqVICze3laKbysWkdeBnyISsKf7AzAupGMEsFvrXbpmPEWCucYE5/dUoF6+3eNsvk01ZpPjToY3gGZgmeIE1Znjus9qzxIKiJFKs12SuhChABVOrXHxKrAPeOiQ/dNxn0HqiPt0jSWC1DFbvhx2GWtDjgFfAtNChdAq/Cz1V+fydMlNwLO6713gH6elSQ1rgN4YAd0bcrGockVxVxDUetSLJNJZiBG52CQyjrsuTItEVSgo48h26TjsQaYbmOtLYqIKV6aERDLAXZ+aYinwbELDvwHvObP4i8Bm1YWkZE46tSYWPk5ocK9j0FLwJGcur/ToyzLA2rgk7EneSmDosjZdoYrtZqBPpHutB5FbcWf7TxMasvbEsDJHBpqsIazDg0x1nNj4I6ERm98Ne3KsW1X/FrjuQeRq1Bl/qoeRHdLxTujkJG2pjEJkk4eBVg1ahnlq7d35PS3ZEYVI0EInlR9DDeNwYBHwnYI+DSJnohBpTcFQp45DF2lgCjBa//vqvxaFiE8lzyY2U5wKDUiHPHX2RCESp02PK5aW0TmXj57eQr+RN9Wt5lq3I1LDCyn0Xnnxl4eBOTpKvZRj3bKYYYYnkdb8NOCohwHLTGg0DU+GDzS6GrZ5EmmOQmSLZ2DbAXbwLbFWVX6DDq4Nr6SQhmuiEHnN04gNQluzfE6zZnKVPtFlPGUyEZF0DnHlnj7yGHZ5tu8ZR+x7SmTMkJv4Gk1rQsw4cWZHTbGwLiXjacpqEmJVgQtkVOkFPsMTUxKetqclJ3TEmhpsTvlGQ1fS46Eo8lA26gt52hjgGc0bVh8agANqrS+qM70r6XY22O38f03XntG9DdI1V7oHMADKBI8AYiaX3agSP/AAAAAASUVORK5CYII=">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-@section Scripts{
+    <!-- Total de Productos -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-indigo text-uppercase mb-1">Total de Productos</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalProductos">50</div>
+                    </div>
+                    <div class="col-auto">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABHUlEQVR4nO2WMUpDQRRFDyhaRVyD4CosXYqtfRpJWrfgNuxSx0pwITb2YnHDByMymPyfmcE3Q+6BqR7J3PPuBALGmBpcAa+AMs6WnM++AddVDIAb4D0zSKmIgA/gtlTiDvgsCFFDRMAXcJ8jcAI8Fl5eU0Tf5wk4nSoxA54rXVxbRMAKuMxpx0SjTs4o0QFlkYToTcuNJJRu6gE4YzfDbNFDI7MJd1z0ILIAzvd8/zBb9iCifzqjRAeURRKiNy03khC9abmRhOhNy40kRG9abiQhetPqrZHhj+M8Y6aWRIagW+YHzNSSyO+gaeDlnllzImmQQ2eyCG6Eo3haqvQb20l4gD+wiBp4Omr9aVmEY23kpYGQGjnrKSLGGH7YABkQA4I6Y8MeAAAAAElFTkSuQmCC">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-     <script src="~/vendor/chart.js/Chart.min.js"></script>
+    <!-- Total de Categorias -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-indigo text-uppercase mb-1">Total de Categorias</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalCategorias">18</div>
+                    </div>
+                    <div class="col-auto">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABU0lEQVR4nO3YQWrDMBCF4f8QLU2TI2XTTc/QG9S9S8k+5CbtAdqiXW5QKIV64ykGBUKIQmxp5JGSB7MxxtaHxpYtuOYycwusgC3wC0hEtcA7sMyNmAEfkYOXQD3kQiwAp4QQ4K0GhAB/JbeT7FVXA0I0ISnaqQWegbmvxh8LnW8SIX7gh2lyQVK2033g+uqtlfqZmAdmWxWi8YptjtznRbO1tNaJ1mPOedi7kl6xcqK6GhASA7GEkLEQawgZA7GIkKEQqwgZAsnxKa4OmRmeCfH1U/pMiK9tDQgBXmtAOODmGOKuMMQiNBubGhB9vmtA9PmqAdHn0S8wRSN2eTKIcUMRFjFuLMISxsUiLGBcKsSUGJcaMQXGaSFyYtQROTDZEJqY7AgNzGSIlJjJESkwZhAxGHOIMRiziCEY84hzMMUgTmGKQ+z/aX76PYC135255uLyD7heDgUqnqu5AAAAAElFTkSuQmCC">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-      <script src="~/js/vistas/DashBoard_Index.js"></script>
+<div class="row">
+    <!--Ventas de los ultimos 7 días -->
+    <div class="col-xl-8 col-lg-7">
+        <div class="card shadow mb-4">
+            <!-- Encabezado de la Tabla -->
+            <div class="card-header py-3 bg-second-primary">
+                <h6 class="m-0 font-weight-bold text-white">Ventas de los ultimos 7 días</h6>
+            </div>
+            
+            <!-- Tabla -->
+            <div class="card-body">
+                <div class="chart-area" style="height: 350px !important;">
+                    <canvas id="chartVentas"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Productos más vendidos -->
+    <div class="col-xl-4 col-lg-5">
+        <div class="card shadow mb-4">
+            <!-- Encabezado de la Grafica -->
+            <div class="card-header py-3 bg-second-primary">
+                <h6 class="m-0 font-weight-bold text-white">Productos más vendidos</h6>
+            </div>
+            
+            <!-- Grafica -->
+            <div class="card-body">
+                <div class="chart-pie" style="height: 350px !important ;">
+                    <canvas id="chartProductos"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{ 
+    <script src="~/vendor/chart.js/Chart.min.js"></script>
+    <script src="~/js/vistas/DashBoard_Index.js"></script>
 }
-
