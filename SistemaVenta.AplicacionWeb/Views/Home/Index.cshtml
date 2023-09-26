@@ -1,7 +1,72 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Pagina de Inicio";
 }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
 
-<div class="text-center">
-    <h1 class="display-4">Bienvenido</h1>
-</div>
+        header {
+            background-color: #0F111E;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #0F111E;
+        }
+
+        p { text-align: justify; }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: #0F111E;
+        }
+
+        .section { margin-bottom: 30px; }
+
+        .section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .section p { font-size: 16px; }
+
+        .offer-img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FLOGI.png?alt=media&token=0c9a7779-4292-4398-8115-01a517ec27a8" alt="Logo de Pegasus Ciber Store" width="70%">
+    </header>
+    <div class="container">
+        <div class="section">
+            <h2>Quiénes Somos</h2>
+            <p>
+                En Pegasus Ciber Store, nos enorgullece ser una empresa líder en la vanguardia de la tecnología y la ciberseguridad. Nuestra misión es proporcionar a individuos y empresas soluciones integrales para sus necesidades tecnológicas y de seguridad digital.
+                Nuestro compromiso con la excelencia se refleja en la selección cuidadosa de productos y servicios que ofrecemos. Desde hardware y software de última generación hasta asesoramiento en ciberseguridad, estamos aquí para ayudarte a navegar por el complejo mundo de la tecnología de manera segura y efectiva.
+            </p>
+        </div>
+        <div class="section">
+            <h2>Ofertas del Mes</h2>
+            <p>Descubre nuestras increíbles ofertas del mes. ¡No te las puedes perder!</p>
+            <img class="offer-img" src="https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FOfertas%20(3).png?alt=media&token=a7314908-a99e-4f30-a13a-ca2edea5c875" Oferta del Mes 2">
+            <img class="offer-img" src="https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FOfertas%20(2).png?alt=media&token=ceb9e52e-9cab-41a5-80aa-dc4b16cfa534" alt="Oferta del Mes 1">
+        </div>
+    </div>
+</body>
