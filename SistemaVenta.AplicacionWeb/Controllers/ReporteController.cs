@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
 using AutoMapper;
 using SistemaVenta.AplicacionWeb.Models.ViewModels;
 using SistemaVenta.BLL.Interfaces;
@@ -10,10 +9,8 @@ namespace SistemaVenta.AplicacionWeb.Controllers
     [Authorize]
     public class ReporteController : Controller
     {
-
         private readonly IMapper _mapper;
         private readonly IVentaService _ventaServicio;
-
         public ReporteController(IMapper mapper, IVentaService ventaServicio)
         {
             _mapper = mapper;
@@ -31,6 +28,5 @@ namespace SistemaVenta.AplicacionWeb.Controllers
             List<VMReporteVenta> vmLista = _mapper.Map<List<VMReporteVenta>>(await _ventaServicio.Reporte(fechaInicio, fechaFin));
             return StatusCode(StatusCodes.Status200OK, new { data = vmLista });
         }
-
     }
 }

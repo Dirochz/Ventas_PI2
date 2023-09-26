@@ -2,13 +2,11 @@
     ViewData["Title"] = "Categoria";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 @section Estilos{
     <link rel="stylesheet" href="~/vendor/datatables/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="~/vendor/datatables/extensiones/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="~/vendor/datatables/extensiones/css/buttons.dataTables.min.css">
 }
-
 <div class="card shadow mb-4">
     <div class="card-header py-3 background-indigo">
         <h6 class="m-0 font-weight-bold text-white">Lista de Categorias</h6>
@@ -105,23 +103,13 @@
     </div>
 </div>
 
-
-                    @section Scripts{
-    
-    <!-- ============================================================
-    =SCRIPTS PARA ESTA PAGINA
-    ===============================================================-->
+@section Scripts{
     <script src="~/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="~/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-                        
-    <script src="~/vendor/datatables/extensiones/js/dataTables.responsive.min.js"></script>
-                 
+    <script src="~/vendor/datatables/dataTables.bootstrap4.min.js"></script>                    
+    <script src="~/vendor/datatables/extensiones/js/dataTables.responsive.min.js"></script>     
     <script src="~/vendor/datatables/extensiones/js/dataTables.buttons.min.js"></script>
     <script src="~/vendor/datatables/extensiones/js/jszip.min.js"></script>
     <script src="~/vendor/datatables/extensiones/js/buttons.html5.min.js"></script>
     <script src="~/vendor/datatables/extensiones/js/buttons.print.min.js"></script>
-
     <script src="~/js/vistas/Categoria_Index.js"></script>
-
- 
-                    }
+}

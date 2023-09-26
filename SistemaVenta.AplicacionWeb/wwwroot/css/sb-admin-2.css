@@ -10911,15 +10911,15 @@ a:focus {
 }
 
 .bg-register-image {
-  background: url("https://images.unsplash.com/photo-1541574823565-f1d660886187?w=600");
-  background-position: center;
-  background-size: cover;
+    background: url("https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FLOGI%5B271%5D.png?alt=media&token=8c4ae2f9-d42f-43d1-9a4c-923052b85d46");
+    background-position: center;
+    background-size: 114%;
 }
 
 .bg-password-image {
-  background: url("https://images.unsplash.com/photo-1541574823565-f1d660886187?w=600");
-  background-position: center;
-  background-size: cover;
+    background: url("https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FLOGI%5B271%5D.png?alt=media&token=8c4ae2f9-d42f-43d1-9a4c-923052b85d46");
+    background-position: center;
+    background-size: 114%;
 }
 
 form.user .custom-checkbox.small label {

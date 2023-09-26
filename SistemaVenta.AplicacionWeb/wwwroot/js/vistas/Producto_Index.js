@@ -1,6 +1,4 @@
-﻿
-
-const MODELO_BASE = {
+﻿const MODELO_BASE = {
     idProducto: 0,
     codigoBarra: "",
     marca: "",
@@ -9,31 +7,24 @@ const MODELO_BASE = {
     stock: 0,
     urlImagen: "",
     precio:0,
-    esActivo: 1,
-    
+    esActivo: 1,    
 }
-
-
-
 let tablaData;
-
 $(document).ready(function () {
-
     fetch("/Categoria/Lista")
-        .then(response => {
-            return response.ok ? response.json() : Promise.reject(response);
-        })
-        .then(responseJson => {
-            console.log(responseJson)
-            if (responseJson.data.length > 0) {
-                responseJson.data.forEach((item) => {
-                    $("#cboCategoria").append(
-                        $("<option>").val(item.idCategoria).text(item.descripcion)
-                    )
-                })
-            }
-        })
-
+    .then(response => {
+        return response.ok ? response.json() : Promise.reject(response);
+    })
+    .then(responseJson => {
+        console.log(responseJson)
+        if (responseJson.data.length > 0) {
+            responseJson.data.forEach((item) => {
+                $("#cboCategoria").append(
+                    $("<option>").val(item.idCategoria).text(item.descripcion)
+                )
+            })
+        }
+    })
 
     tablaData = $('#tbdata').DataTable({
         responsive: true,
@@ -88,13 +79,10 @@ $(document).ready(function () {
             url: "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
         },
     });
-
 })
-
 
 function mostrarModal(modelo = MODELO_BASE) {
     $("#txtId").val(modelo.idProducto)
-
     $("#txtCodigoBarra").val(modelo.codigoBarra)
     $("#txtMarca").val(modelo.marca)
     $("#txtDescripcion").val(modelo.descripcion)
@@ -104,32 +92,22 @@ function mostrarModal(modelo = MODELO_BASE) {
     $("#cboEstado").val(modelo.esActivo)
     $("#txtImagen").val("")
     $("#imgProducto").attr("src", modelo.urlImagen)
-
-
     $("#modalData").modal("show")
 }
-
-
 
 $("#btnNuevo").click(function () {
     mostrarModal()
 })
 
-
-
 $("#btnGuardar").click(function () {
-
     const inputs = $("input.input-validar").serializeArray();
     const inputs_sin_valor = inputs.filter((item) => item.value.trim() == "")
-
     if (inputs_sin_valor.length > 0) {
         const mensaje = `Debe completar el campo : "${inputs_sin_valor[0].name}"`;
         toastr.warning("", mensaje)
         $(`input[name="${inputs_sin_valor[0].name}"]`).focus()
         return;
     }
-
-
     const modelo = structuredClone(MODELO_BASE);
     modelo["idProducto"] = parseInt($("#txtId").val())
     modelo["codigoBarra"] = $("#txtCodigoBarra").val()
@@ -139,93 +117,74 @@ $("#btnGuardar").click(function () {
     modelo["stock"] = $("#txtStock").val()
     modelo["precio"] = $("#txtPrecio").val()
     modelo["esActivo"] = $("#cboEstado").val()
-
     const inputFoto = document.getElementById("txtImagen")
-
     const formData = new FormData();
-
     formData.append("imagen", inputFoto.files[0])
     formData.append("modelo", JSON.stringify(modelo))
-
     $("#modalData").find("div.modal-content").LoadingOverlay("show");
-
     if (modelo.idProducto == 0) {
-
         fetch("/Producto/Crear", {
             method: "POST",
             body: formData
         })
-            .then(response => {
-                $("#modalData").find("div.modal-content").LoadingOverlay("hide");
-                return response.ok ? response.json() : Promise.reject(response);
-            })
-            .then(responseJson => {
+        .then(response => {
+            $("#modalData").find("div.modal-content").LoadingOverlay("hide");
+            return response.ok ? response.json() : Promise.reject(response);
+        })
+        .then(responseJson => {
 
-                if (responseJson.estado) {
+            if (responseJson.estado) {
 
-                    tablaData.row.add(responseJson.objeto).draw(false)
-                    $("#modalData").modal("hide")
-                    swal("Listo!", "El producto fue creado", "success")
-                } else {
-                    swal("Los sentimos", responseJson.mensaje, "error")
-                }
-            })
+                tablaData.row.add(responseJson.objeto).draw(false)
+                $("#modalData").modal("hide")
+                swal("Listo!", "El producto fue creado", "success")
+            } else {
+                swal("Los sentimos", responseJson.mensaje, "error")
+            }
+        })
     } else {
         fetch("/Producto/Editar", {
             method: "PUT",
             body: formData
         })
-            .then(response => {
-                $("#modalData").find("div.modal-content").LoadingOverlay("hide");
-                return response.ok ? response.json() : Promise.reject(response);
-            })
-            .then(responseJson => {
+        .then(response => {
+            $("#modalData").find("div.modal-content").LoadingOverlay("hide");
+            return response.ok ? response.json() : Promise.reject(response);
+        })
+        .then(responseJson => {
 
-                if (responseJson.estado) {
+            if (responseJson.estado) {
 
-                    tablaData.row(filaSeleccionada).data(responseJson.objeto).draw(false);
-                    filaSeleccionada = null;
-                    $("#modalData").modal("hide")
-                    swal("Listo!", "El producto fue modificado", "success")
-                } else {
-                    swal("Los sentimos", responseJson.mensaje, "error")
-                }
-            })
-
+                tablaData.row(filaSeleccionada).data(responseJson.objeto).draw(false);
+                filaSeleccionada = null;
+                $("#modalData").modal("hide")
+                swal("Listo!", "El producto fue modificado", "success")
+            } else {
+                swal("Los sentimos", responseJson.mensaje, "error")
+            }
+        })
     }
-
-
 })
-
 
 let filaSeleccionada;
 $("#tbdata tbody").on("click", ".btn-editar", function () {
-
     if ($(this).closest("tr").hasClass("child")) {
         filaSeleccionada = $(this).closest("tr").prev();
     } else {
         filaSeleccionada = $(this).closest("tr");
     }
-
     const data = tablaData.row(filaSeleccionada).data();
-
     mostrarModal(data);
-
 })
 
-
-
 $("#tbdata tbody").on("click", ".btn-eliminar", function () {
-
     let fila;
     if ($(this).closest("tr").hasClass("child")) {
         fila = $(this).closest("tr").prev();
     } else {
         fila = $(this).closest("tr");
     }
-
     const data = tablaData.row(fila).data();
-
     swal({
         title: "¿Está seguro?",
         text: `Eliminar el producto "${data.descripcion}"`,
@@ -238,34 +197,27 @@ $("#tbdata tbody").on("click", ".btn-eliminar", function () {
         closeOnCancel: true
     },
         function (respuesta) {
-
             if (respuesta) {
-
                 $(".showSweetAlert").LoadingOverlay("show");
-
                 fetch(`/Producto/Eliminar?IdProducto=${data.idProducto}`, {
                     method: "DELETE"
                 })
-                    .then(response => {
-                        $(".showSweetAlert").LoadingOverlay("hide");
-                        return response.ok ? response.json() : Promise.reject(response);
-                    })
-                    .then(responseJson => {
+                .then(response => {
+                    $(".showSweetAlert").LoadingOverlay("hide");
+                    return response.ok ? response.json() : Promise.reject(response);
+                })
+                .then(responseJson => {
 
-                        if (responseJson.estado) {
+                    if (responseJson.estado) {
 
-                            tablaData.row(fila).remove().draw()
+                        tablaData.row(fila).remove().draw()
 
-                            swal("Listo!", "El producto fue eliminado", "success")
-                        } else {
-                            swal("Los sentimos", responseJson.mensaje, "error")
-                        }
-                    })
-
-
+                        swal("Listo!", "El producto fue eliminado", "success")
+                    } else {
+                        swal("Los sentimos", responseJson.mensaje, "error")
+                    }
+                })
             }
         }
     )
-
-
 })

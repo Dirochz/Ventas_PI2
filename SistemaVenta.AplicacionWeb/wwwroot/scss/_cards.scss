@@ -1,8 +1,5 @@
-// Custom Card Styling
-
 .card {
   .card-header {
-    // Format Dropdowns in Card Headings
     .dropdown {
       line-height: 1;
       .dropdown-menu {
@@ -10,7 +7,6 @@
       }
     }
   }
-  // Collapsable Card Styling
   .card-header[data-toggle="collapse"] {
     text-decoration: none;
     position: relative;

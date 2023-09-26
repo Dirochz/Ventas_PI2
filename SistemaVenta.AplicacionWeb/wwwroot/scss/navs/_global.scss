@@ -1,9 +1,6 @@
-// Global styles for both custom sidebar and topbar compoments
-
 .sidebar,
 .topbar {
   .nav-item {
-    // Customize Dropdown Arrows for Navbar
     &.dropdown {
       .dropdown-toggle {
         &::after {
@@ -23,7 +20,6 @@
         }
       }
     }
-    // Counter for nav links and nav link image sizing
     .nav-link {
       position: relative;
       .badge-counter {
