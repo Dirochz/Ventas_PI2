@@ -93,16 +93,24 @@ Create Table Venta(
 Go
 
 Create Table DetalleVenta(
-	idDetalleVenta int primary key identity(1,1),
-	idVenta int references Venta(idVenta),
-	idProducto int,
-	marcaProducto varchar(100),
-	descripcionProducto varchar(100),
-	categoriaProducto varchar(100),
-	cantidad int,
-	precio decimal(10,2),
-	total decimal(10,2))
-Go
+    idDetalleVenta int primary key identity(1,1),
+    idVenta int references Venta(idVenta),
+    idProducto int,
+    marcaProducto varchar(100),
+    descripcionProducto varchar(100),
+    categoriaProducto varchar(100),
+    cantidad int,
+    precio decimal(10,2),
+    total decimal(10,2),
+    Traslados XML, -- Add XML column for Traslados
+    moneda varchar(50), -- Add column for moneda
+    tipoCambio decimal(10,2), -- Add column for tipoCambio
+    tipoDeComprobante varchar(50), -- Add column for tipoDeComprobante
+    exportacion XML, -- Add XML column for exportacion
+    metodoPago varchar(50),
+    lugarExpedicion varchar(100),
+    confirmacion varchar(50)
+);
 
 Create Table Negocio(
 	idNegocio int primary key,
@@ -121,4 +129,13 @@ Create Table Configuracion(
 	recurso varchar(50),
 	propiedad varchar(50),
 	valor varchar(60))
+Go
+
+Create Table Cliente(
+    ClienteId int primary key identity(1,1),
+    Nombre varchar(100),
+    Domicilio varchar(100),
+    RFC varchar(50),
+    FechaExpedición datetime,
+    fechaRegistro datetime default getdate())
 Go

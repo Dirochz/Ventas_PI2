@@ -128,7 +128,8 @@ Go
 -- NO TOCAR: Son las opciones de Administracion
 Insert Into Menu(descripcion,idMenuPadre, controlador,paginaAccion,esActivo) Values
 	('Usuarios',2,'Usuario','Index',1),
-	('Negocio',2,'Negocio','Index',1)
+	('Negocio',2,'Negocio','Index',1),
+	('Cliente',2,'Cliente','Index',1)
 Go
 
 --*menu hijos - Inventario
@@ -166,7 +167,8 @@ Insert Into RolMenu(idRol,idMenu,esActivo) Values
 	(1,9,1),
 	(1,10,1),
 	(1,11,1),
-	(1,12,1)
+	(1,12,1),
+	(1,13,1)
 Go
 
 --*Empleado
