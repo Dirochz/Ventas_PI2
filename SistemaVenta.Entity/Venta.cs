@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace SistemaVenta.Entity
 {
@@ -20,6 +21,21 @@ namespace SistemaVenta.Entity
         public decimal? ImpuestoTotal { get; set; }
         public decimal? Total { get; set; }
         public DateTime? FechaRegistro { get; set; }
+
+        //[XmlElement("Traslados")]
+        //public string? Traslados { get; set; }
+
+        //[XmlElement("moneda")]
+        //public string? Moneda { get; set; }
+
+        //[XmlElement("tipoCambio")]
+        //public decimal? TipoCambio { get; set; }
+
+        //[XmlElement("tipoDeComprobante")]
+        //public string? TipoDeComprobante { get; set; }
+
+        //[XmlElement("exportacion")]
+        //public string? Exportacion { get; set; }
 
         public virtual TipoDocumentoVenta? IdTipoDocumentoVentaNavigation { get; set; }
         public virtual Usuario? IdUsuarioNavigation { get; set; }

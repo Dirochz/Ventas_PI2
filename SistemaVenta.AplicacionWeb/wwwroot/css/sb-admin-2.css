@@ -2344,34 +2344,34 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #0F111E;
-  border-color: #4e73df;
+    color: #fff;
+    background-color: #348F6C;
+    border-color: #4e73df;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #191d33;
+  background-color: #215c45;
   border-color: #2653d4;
 }
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: black;
+  background-color: #0e281e;
   border-color: #2653d4;
   box-shadow: 0 0 0 0.2rem rgba(105, 136, 228, 0.5);
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
   color: #fff;
-  background-color: #4e73df;
+  background-color: #0e281e;
   border-color: #4e73df;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: black;
+  background-color: #0e281e;
   border-color: #244ec9;
 }
 
@@ -2459,19 +2459,22 @@ fieldset:disabled a.btn {
 
 .btn-success {
   color: #fff;
-  background-color: #0f111e;
+  /*background-color: #0f111e;*/
+  background-color: #348f6c;
   border-color: black;
 }
 
 .btn-success:hover {
   color: #fff;
-  background-color: #222644;
+  /*background-color: #222644;*/
+  background-color: #215c45;
   border-color: black;
 }
 
 .btn-success:focus, .btn-success.focus {
   color: #fff;
-  background-color: #0f111e;
+  /*background-color: #0f111e;*/
+  background-color: #0e281e;
   border-color: black;
   box-shadow: 0 0 0 0.2rem rgba(62, 208, 156, 0.5);
 }
@@ -4823,7 +4826,8 @@ input[type="button"].btn-block {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #0f111e;
+  /*background-color: #0f111e;*/
+  background-color: #348f6c;
   border-color: #4e73df;
 }
 
@@ -6524,6 +6528,10 @@ button.bg-dark:focus {
 
 .bg-blue {
     background-color: #b1b9eb !important;
+}
+
+.bg-green {
+    background-color: #9effda !important;
 }
 
 .bg-transparent {
@@ -9932,7 +9940,7 @@ a:focus {
 }
 
 .bg-gradient-primary {
-    background-color: #0f111e;
+    background-color: #348F6C;
     background-size: cover;
 }
 
@@ -10072,6 +10080,10 @@ a:focus {
 
 .background-indigo {
     background-color: #0f111e;
+}
+
+.background-green {
+    background-color: #348f6c;
 }
 
 .icon-circle {
@@ -10690,23 +10702,28 @@ a:focus {
 }
 
 .sidebar-light .nav-item .nav-link:active, .sidebar-light .nav-item .nav-link:focus, .sidebar-light .nav-item .nav-link:hover {
-  color: #6e707e;
+  /*color: #6e707e;*/
+  color: black;
 }
 
 .sidebar-light .nav-item .nav-link:active i, .sidebar-light .nav-item .nav-link:focus i, .sidebar-light .nav-item .nav-link:hover i {
-  color: #6e707e;
+  /*color: #6e707e;*/
+  color: black;
 }
 
 .sidebar-light .nav-item .nav-link[data-toggle="collapse"]::after {
-  color: #b7b9cc;
+  /*color: #b7b9cc;*/
+  color: black;
 }
 
 .sidebar-light .nav-item.active .nav-link {
-  color: #6e707e;
+  /*color: #6e707e;*/
+  color: black;
 }
 
 .sidebar-light .nav-item.active .nav-link i {
-  color: #6e707e;
+  /*color: #6e707e;*/
+  color: black;
 }
 
 .sidebar-light #sidebarToggle {
@@ -10742,11 +10759,13 @@ a:focus {
 }
 
 .sidebar-dark .nav-item .nav-link:active, .sidebar-dark .nav-item .nav-link:focus, .sidebar-dark .nav-item .nav-link:hover {
-  color: #b1b9eb;
+  /*color: #b1b9eb;*/
+  color: black;
 }
 
 .sidebar-dark .nav-item .nav-link:active i, .sidebar-dark .nav-item .nav-link:focus i, .sidebar-dark .nav-item .nav-link:hover i {
-  color: #b1b9eb;
+  /*color: #b1b9eb;*/
+  color: black;
 }
 
 .sidebar-dark .nav-item .nav-link[data-toggle="collapse"]::after {
@@ -10754,11 +10773,13 @@ a:focus {
 }
 
 .sidebar-dark .nav-item.active .nav-link {
-  color: #b1b9eb;
+  /*color: #b1b9eb;*/
+  color: black;
 }
 
 .sidebar-dark .nav-item.active .nav-link i {
-  color: #b1b9eb;
+  /*color: #b1b9eb;*/
+  color: black;
 }
 
 .sidebar-dark #sidebarToggle {
@@ -10904,10 +10925,16 @@ a:focus {
   }
 }
 
-.bg-login-image {
-    background: url("https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FLOGI%5B271%5D.png?alt=media&token=8c4ae2f9-d42f-43d1-9a4c-923052b85d46");
+.bg-img-login {
+    background: url("https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FFondo%20(2).png?alt=media&token=253556cd-2f98-4c74-92d7-82203965f114");
     background-position: left;
     background-size: 114%;
+}
+
+.bg-login-image {
+    background: url("https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FAXOLOTL%20LOGO.png?alt=media&token=b64b94e5-f654-44d8-8fb6-0a9c618ed61d");
+    background-position: center;
+    background-size: 134%;
 }
 
 .bg-register-image {

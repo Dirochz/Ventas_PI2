@@ -1,4 +1,7 @@
-﻿namespace SistemaVenta.AplicacionWeb.Models.ViewModels
+﻿using System.Collections.Generic;
+using System.Runtime.Serialization;
+
+namespace SistemaVenta.AplicacionWeb.Models.ViewModels
 {
     public class VMDetalleVenta
     {

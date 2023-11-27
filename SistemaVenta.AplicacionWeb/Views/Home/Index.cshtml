@@ -1,64 +1,139 @@
 ﻿@{
     ViewData["Title"] = "Pagina de Inicio";
 }
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Inicio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        header {
-            background-color: #0F111E;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-        h1 {
-            font-size: 36px;
-            color: #0F111E;
-        }
-        p { text-align: justify; }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: #0F111E;
-        }
-        .section { margin-bottom: 30px; }
-        .section h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .section p { font-size: 16px; }
-        .offer-img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <img src="https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FLOGI.png?alt=media&token=0c9a7779-4292-4398-8115-01a517ec27a8" alt="Logo de Pegasus Ciber Store" width="70%">
-    </header>
-    <div class="container">
-        <div class="section">
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f8f6f6;
+            }
+
+            header {
+                background-color: #348F6C;
+                color: #fff;
+                text-align: center;
+                padding: 20px;
+            }
+
+            section {
+                background-color: #ffffff;
+                margin: 20px;
+                padding: 20px;
+                border-radius: 5px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            video {
+                max-width: 100%;
+            }
+
+            #image-carousel {
+                display: flex;
+                overflow: hidden;
+            }
+
+            #image-carousel img {
+                max-width: 20%;
+                height: auto;
+                margin-right: 10px;
+                transition: transform 1s;
+            }
+
+            #contactanos {
+                background-color: #f0f0f0;
+            }
+
+            footer {
+                background-color: #348F6C;
+                color: #fff;
+                text-align: center;
+                padding: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+        </header>
+
+        <section id="quienes-somos">
             <h2>Quiénes Somos</h2>
-            <p style="color: black">
-                En Pegasus Ciber Store, nos enorgullece ser una empresa líder en la vanguardia de la tecnología y la ciberseguridad. Nuestra misión es proporcionar a individuos y empresas soluciones integrales para sus necesidades tecnológicas y de seguridad digital.
-                Nuestro compromiso con la excelencia se refleja en la selección cuidadosa de productos y servicios que ofrecemos. Desde hardware y software de última generación hasta asesoramiento en ciberseguridad, estamos aquí para ayudarte a navegar por el complejo mundo de la tecnología de manera segura y efectiva.
-            </p>
-        </div>
-        <div class="section">
-            <h2>Ofertas del Mes</h2>
-            <p style="color: black">Descubre nuestras increíbles ofertas del mes. ¡No te las puedes perder!</p>
-            <img class="offer-img" src="https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FOfertas%20(3).png?alt=media&token=a7314908-a99e-4f30-a13a-ca2edea5c875" Oferta del Mes 2">
-            <img class="offer-img" src="https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FOfertas%20(2).png?alt=media&token=ceb9e52e-9cab-41a5-80aa-dc4b16cfa534" alt="Oferta del Mes 1">
-        </div>
-    </div>
-</body>
+            <section id="quienes-somos">
+
+                <p>
+                    Somos Axolotl, una empresa mexicana dedicada a la venta de productos electrónicos de alta calidad.
+                    Nuestra pasión por la tecnología y nuestro compromiso con la satisfacción del cliente nos han convertido
+                    en un referente en el mercado de productos electrónicos en México.
+                </p>
+
+                <p>
+                    En Axolotl, creemos que la tecnología puede mejorar la vida de las personas, y trabajamos incansablemente
+                    para brindar a nuestros clientes productos electrónicos innovadores y confiables. Colaboramos
+                    estrechamente con los principales fabricantes y proveedores para garantizar que nuestros productos
+                    cumplan con los estándares más exigentes de calidad y rendimiento.
+                </p>
+
+                <p>
+                    Nuestro compromiso con la calidad se refleja en cada producto que vendemos. Ya sea que estés buscando
+                    teléfonos inteligentes, laptops, dispositivos de audio, o cualquier otro gadget electrónico, en Axolotl
+                    encontrarás una amplia selección de productos de marcas reconocidas, respaldados por nuestro servicio al
+                    cliente excepcional.
+                </p>
+
+                <p>
+                    Gracias por confiar en Axolotl como tu proveedor de productos electrónicos. Estamos emocionados por lo
+                    que el futuro nos depara y esperamos seguir brindándote productos de calidad que satisfagan tus
+                    necesidades tecnológicas.
+                </p>
+            </section>
+
+            <video width="640" height="360" controls>
+            <source src="https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2Fdise%C3%B1os.mp4?alt=media&token=761ad226-c4e9-44b5-beed-afd10624dc52" type="video/mp4">
+                Tu navegador no soporta la reproducción de videos.
+            </video>
+        </section>
+
+        <section id="galeria">
+            <h2>Promociones</h2>
+            <div id="image-carousel">
+                <img src="https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FPromo1.png?alt=media&token=50bddc24-fb0d-46f2-8396-7e4c40c1c595" alt="Imagen 1">
+                <img src="https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FPromo2.png?alt=media&token=040ce6bc-d32a-4670-a595-fec239b55553" alt="Imagen 2">
+                <img src="https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FPromo3.png?alt=media&token=604e7278-1cc6-46a0-81fe-9312be1bf7ca" alt="Imagen 3">
+                <img src="https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FPROMO4.png?alt=media&token=8ebb5223-59b7-458c-8d97-894750f7745f" alt="Imagen 4">
+                <img src="https://firebasestorage.googleapis.com/v0/b/ventapi2.appspot.com/o/Interfaz%2FPromo5.png?alt=media&token=e115f7f9-3fd0-4039-af8c-a8d73b3ab414" alt="Imagen 5">
+            </div>
+
+            <script>
+                const carousel = document.getElementById("image-carousel");
+                const images = carousel.querySelectorAll("img");
+                let currentIndex = 0;
+
+                function rotateCarousel() {
+                    images[currentIndex].style.opacity = 0;
+                    currentIndex = (currentIndex + 1) % images.length;
+                    images[currentIndex].style.opacity = 1;
+                }
+
+                setInterval(rotateCarousel, 500); // Cambia de imagen cada 3 segundos AJUSTAR EN CASO DE SER NECESARIO
+            </script>
+        </section>
+
+        <section id="contactanos">
+            <h2>Contáctanos</h2>
+            <p>Si deseas ponerte en contacto con nosotros, puedes hacerlo a través de:</p>
+        </section>
+        <footer>
+            <p>Derechos de autor © 2023 Mi Empresa</p>
+        </footer>
+    </body>
+</html>

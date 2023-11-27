@@ -48,6 +48,7 @@ namespace SistemaVenta.IOC
             services.AddScoped<IDashBoardService, DashBoardService>();
             services.AddScoped<IMenuService, MenuService>();
 
+            services.AddSingleton<IServiceConsumer, ServiceConsumer>(); // Reemplaza ServiceConsumer con la implementación real que tengas
         }
     }
 }

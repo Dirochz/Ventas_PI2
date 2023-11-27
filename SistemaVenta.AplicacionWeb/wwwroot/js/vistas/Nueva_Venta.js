@@ -180,6 +180,7 @@ $("#btnTerminarVenta").click(function () {
         total: $("#txtTotal").val(),
         DetalleVenta : vmDetalleVenta
     }
+    console.dir(venta);
     $("#btnTerminarVenta").LoadingOverlay("show");
     fetch("/Venta/RegistrarVenta", {
         method: "POST",

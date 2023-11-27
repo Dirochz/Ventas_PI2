@@ -1,4 +1,8 @@
-﻿namespace SistemaVenta.AplicacionWeb.Models.ViewModels
+﻿using System.Collections.Generic;
+using System.Runtime.Serialization;
+using static SistemaVenta.AplicacionWeb.Models.ViewModels.VMXML;
+
+namespace SistemaVenta.AplicacionWeb.Models.ViewModels
 {
     public class VMVenta
     {
@@ -14,6 +18,7 @@
         public string? ImpuestoTotal { get; set; }
         public string? Total { get; set; }
         public string? FechaRegistro { get; set; }
+        public FacturaData FacturaData { get; set; } 
         public virtual ICollection<VMDetalleVenta> DetalleVenta { get; set; }
     }
 }

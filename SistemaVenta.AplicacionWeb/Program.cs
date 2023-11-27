@@ -1,12 +1,8 @@
 using SistemaVenta.AplicacionWeb.Utilidades.Automapper;
-
 using SistemaVenta.IOC;
-
-
 using SistemaVenta.AplicacionWeb.Utilidades.Extensiones;
 using DinkToPdf;
 using DinkToPdf.Contracts;
-
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -44,6 +40,11 @@ app.UseRouting();
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "clienteRoute",
+    pattern: "Cliente/{action=Index}/{id?}",
+    defaults: new { controller = "Cliente" });
 
 app.MapControllerRoute(
     name: "default",

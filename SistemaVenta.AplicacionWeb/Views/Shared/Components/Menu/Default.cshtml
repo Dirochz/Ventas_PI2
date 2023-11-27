@@ -24,7 +24,7 @@
                  <span>@menu.Descripcion</span>
              </a>
              <div id="@($"{menucollapse}{correlativo}")" class="collapse"  data-parent="#accordionSidebar">
-                 <div class="bg-blue py-2 collapse-inner rounded">
+                 <div class="bg-green py-2 collapse-inner rounded">
                     @foreach(var submenu in menu.SubMenus)
                     {
                         <a class="collapse-item" href="@($"/{submenu.Controlador}/{submenu.PaginaAccion}")">
