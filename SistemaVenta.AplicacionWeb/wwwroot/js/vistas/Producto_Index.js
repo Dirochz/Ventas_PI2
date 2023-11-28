@@ -7,7 +7,8 @@
     stock: 0,
     urlImagen: "",
     precio:0,
-    esActivo: 1,    
+    esActivo: 1,   
+    catalogo: ""
 }
 let tablaData;
 $(document).ready(function () {
@@ -60,7 +61,8 @@ $(document).ready(function () {
                 "orderable": false,
                 "searchable": false,
                 "width": "80px"
-            }
+            },
+            { "data": "catalogo" }
         ],
         order: [[0, "desc"]],
         dom: "Bfrtip",
@@ -92,6 +94,7 @@ function mostrarModal(modelo = MODELO_BASE) {
     $("#cboEstado").val(modelo.esActivo)
     $("#txtImagen").val("")
     $("#imgProducto").attr("src", modelo.urlImagen)
+    $("#cboCatalogo").val(modelo. == 0 ? $("#cboCatalogo option:first").val() : modelo.catalogo)
     $("#modalData").modal("show")
 }
 
@@ -114,6 +117,7 @@ $("#btnGuardar").click(function () {
     modelo["marca"] = $("#txtMarca").val()
     modelo["descripcion"] = $("#txtDescripcion").val()
     modelo["idCategoria"] = $("#cboCategoria").val()
+    modelo["catalogo"] = $("#cboCatalogo").val()
     modelo["stock"] = $("#txtStock").val()
     modelo["precio"] = $("#txtPrecio").val()
     modelo["esActivo"] = $("#cboEstado").val()

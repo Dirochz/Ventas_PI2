@@ -12,5 +12,6 @@
         public string? UrlImagen { get; set; }
         public string? Precio { get; set; }
         public int? EsActivo { get; set; }
+        public string? catalogo { get; set; }
     }
 }

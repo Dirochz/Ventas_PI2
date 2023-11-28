@@ -292,6 +292,11 @@ namespace SistemaVenta.DAL.DBContext
                     .IsUnicode(false)
                     .HasColumnName("urlImagen");
 
+                entity.Property(e => e.catalogo)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("catalogo");
+
                 entity.HasOne(d => d.IdCategoriaNavigation)
                     .WithMany(p => p.Productos)
                     .HasForeignKey(d => d.IdCategoria)

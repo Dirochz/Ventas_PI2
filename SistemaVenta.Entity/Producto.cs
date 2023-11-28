@@ -16,6 +16,7 @@ namespace SistemaVenta.Entity
         public decimal? Precio { get; set; }
         public bool? EsActivo { get; set; }
         public DateTime? FechaRegistro { get; set; }
+        public string? catalogo {  get; set; } 
 
         public virtual Categoria? IdCategoriaNavigation { get; set; }
     }
